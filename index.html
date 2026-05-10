@@ -207,24 +207,28 @@
   }
 
   .memory-slot {
-    aspect-ratio: 1;
     border-radius: 16px;
-    background: linear-gradient(135deg, #fde8ef, #fdf4f7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    color: #cba;
-    letter-spacing: 0.1em;
-    border: 2px dashed var(--pink);
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
   }
 
   .memory-slot img {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 1;
     object-fit: cover;
-    border-radius: 14px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(244,167,185,0.2);
+  }
+
+  .memory-caption {
+    font-size: 0.8rem;
+    color: var(--deep-pink);
+    font-style: italic;
+    text-align: center;
+    padding: 0 0.5rem;
   }
 
   /* FOOTER */
@@ -270,23 +274,23 @@
   <div class="cards-grid">
     <div class="card" onclick="this.classList.toggle('flipped')">
       <div class="card-front"><span class="num">1</span><span class="hint">tap to reveal ✨</span></div>
-      <div class="card-back">Add your first reason here 💕</div>
+      <div class="card-back">I forget your birthday and our anniversary, have speaking issues AND I AM FUCKING chopper? No you wouldn't say that so- hehe- I love you baby 💕</div>
     </div>
     <div class="card" onclick="this.classList.toggle('flipped')">
       <div class="card-front"><span class="num">2</span><span class="hint">tap to reveal ✨</span></div>
-      <div class="card-back">Add your second reason here 💕</div>
+      <div class="card-back">yoi , you MIGHT remember this (it's oki if u dont) , it's how i greeted ppl before my lil "hellow" came &lt;3</div>
     </div>
     <div class="card" onclick="this.classList.toggle('flipped')">
       <div class="card-front"><span class="num">3</span><span class="hint">tap to reveal ✨</span></div>
-      <div class="card-back">Add your third reason here 💕</div>
+      <div class="card-back">you made that thing, i dont really know what to call it- But it was so beautiful and like "WHOA" for me , thankyou baby 🤍 I am sorry i am not as creative- Infact this site isn't made by me entirely- Just the words</div>
     </div>
     <div class="card" onclick="this.classList.toggle('flipped')">
       <div class="card-front"><span class="num">4</span><span class="hint">tap to reveal ✨</span></div>
-      <div class="card-back">Add your fourth reason here 💕</div>
+      <div class="card-back">speaking of "-" i've been using this thing like water after i met you my lil love- MUST be your love magic turning me into you </div>
     </div>
     <div class="card" onclick="this.classList.toggle('flipped')">
       <div class="card-front"><span class="num">5</span><span class="hint">tap to reveal ✨</span></div>
-      <div class="card-back">Add your fifth reason here 💕</div>
+      <div class="card-back">GONNA SEND THIS SITE TO FUMI TOO , U can't steal her remember? She's mine  ( i love you my lil zulu ) </div>
     </div>
   </div>
 </section>
@@ -294,13 +298,21 @@
 <!-- MEMORIES -->
 <section>
   <p class="section-label">us</p>
-  <h2 class="section-title">Our memories 📸</h2>
+  <h2 class="section-title">Our memories </h2>
   <div class="divider">♡ ♡ ♡</div>
   <div class="memories-grid">
-    <div class="memory-slot">add photo</div>
-    <div class="memory-slot">add photo</div>
-    <div class="memory-slot">add photo</div>
-    <div class="memory-slot">add photo</div>
+    <div class="memory-slot">
+      <img src="01.webp" alt="us">
+      <p class="memory-caption">us when??? (ik u don't like this pic but-) </p>
+    </div>
+    <div class="memory-slot">
+      <img src="02.jpg" alt="marriage certificate">
+      <p class="memory-caption">hehe, da marriage  23.11.2024</p>
+    </div>
+    <div class="memory-slot">
+      <img src="03.jpg" alt="chopped">
+      <p class="memory-caption">chopped?? u can see the girlfriend effect </p>
+    </div>
   </div>
 </section>
 
@@ -310,9 +322,12 @@
   <h2 class="section-title">A little letter 💌</h2>
   <div class="letter-box">
     <p>My Baby Zulu,</p>
-    <p>Write your letter here. Tell her how you feel, what she means to you, your favorite memory together.</p>
-    <p>This is your space. Make it count. 💕</p>
-    <div class="letter-sign">— Your name here</div>
+    <p>I am sorry for being so late-</p>
+    <p>Happy birthday my baby, let's spend more time together from now on. I'll be more competent-</p>
+    <p style="font-size:0.85rem; color:#bbb; font-style:italic;">(and ignore the grammar if anyone else is visiting this site , it's a love language ish thing (great way to hide poor grammar))</p>
+    <br>
+    <p style="font-size:0.85rem; color:#c9a;">a note for Fumi if she visits this site:<br>Thank you for being 1 of her close friends, u seem the closest online friend she has (OTHER THAN ME) from her talks. Anyway byue (for no reason, i'll be seeing u today anyway) 🩷</p>
+    <div class="letter-sign">— YOUR HUSBAND</div>
   </div>
 </section>
 
