@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Zulu 🎀</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap');
+
+  :root {
+    --pink: #f4a7b9;
+    --soft-pink: #fde8ef;
+    --deep-pink: #e07a9a;
+    --cream: #fff8f9;
+    --text: #4a2c3a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #fde8ef 0%, #fdf0f5 50%, #f9e4ee 100%);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .hero-subtitle {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    letter-spacing: 0.4em;
+    color: var(--deep-pink);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.3s forwards;
+  }
+
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 10vw, 7rem);
+    color: var(--text);
+    line-height: 1.1;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.6s forwards;
+  }
+
+  .hero-tagline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: var(--deep-pink);
+    margin-top: 1rem;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.9s forwards;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: var(--deep-pink);
+    opacity: 0;
+    animation: fadeUp 1s ease 1.5s forwards;
+  }
+
+  /* HEARTS */
+  .heart {
+    position: absolute;
+    font-size: 1.2rem;
+    animation: floatHeart linear infinite;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  @keyframes floatHeart {
+    0% { transform: translateY(110vh) rotate(0deg); opacity: 0.6; }
+    100% { transform: translateY(-10vh) rotate(20deg); opacity: 0; }
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 5rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--deep-pink);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    margin-bottom: 2.5rem;
+    color: var(--text);
+  }
+
+  /* REVEAL CARDS */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .card {
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(244, 167, 185, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    perspective: 600px;
+  }
+
+  .card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(244, 167, 185, 0.35); }
+
+  .card-front, .card-back {
+    width: 100%;
+    transition: opacity 0.4s ease;
+  }
+
+  .card-front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .card-front .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--pink);
+    line-height: 1;
+  }
+
+  .card-front .hint {
+    font-size: 0.75rem;
+    color: #bbb;
+    letter-spacing: 0.1em;
+  }
+
+  .card-back {
+    display: none;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text);
+  }
+
+  .card.flipped .card-front { display: none; }
+  .card.flipped .card-back { display: block; }
+  .card.flipped { background: linear-gradient(135deg, #fde8ef, #fff0f5); }
+
+  /* LETTER */
+  .letter-box {
+    background: white;
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 30px rgba(244, 167, 185, 0.15);
+    font-size: 1rem;
+    line-height: 1.9;
+    color: var(--text);
+    border-left: 4px solid var(--pink);
+  }
+
+  .letter-box p { margin-bottom: 1rem; }
+
+  .letter-sign {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--deep-pink);
+    margin-top: 1.5rem;
+  }
+
+  /* MEMORIES */
+  .memories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .memory-slot {
+    aspect-ratio: 1;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #fde8ef, #fdf4f7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: #cba;
+    letter-spacing: 0.1em;
+    border: 2px dashed var(--pink);
+    overflow: hidden;
+  }
+
+  .memory-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #fde8ef, #fdf0f5);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--deep-pink);
+  }
+
+  /* DIVIDER */
+  .divider {
+    text-align: center;
+    color: var(--pink);
+    font-size: 1.2rem;
+    letter-spacing: 0.5em;
+    margin: 1rem 0 3rem;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero" id="hero">
+  <p class="hero-subtitle">Happy Birthday, my Baby 🎀</p>
+  <h1 class="hero-name">Zulu</h1>
+  <p class="hero-tagline">The most beautiful soul I know.</p>
+  <p class="scroll-hint">↓ scroll ↓</p>
+</div>
+
+<!-- 5 REASONS -->
+<section>
+  <p class="section-label">just a few of many</p>
+  <h2 class="section-title">5 reasons I love you...</h2>
+  <div class="cards-grid">
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-front"><span class="num">1</span><span class="hint">tap to reveal ✨</span></div>
+      <div class="card-back">Add your first reason here 💕</div>
+    </div>
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-front"><span class="num">2</span><span class="hint">tap to reveal ✨</span></div>
+      <div class="card-back">Add your second reason here 💕</div>
+    </div>
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-front"><span class="num">3</span><span class="hint">tap to reveal ✨</span></div>
+      <div class="card-back">Add your third reason here 💕</div>
+    </div>
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-front"><span class="num">4</span><span class="hint">tap to reveal ✨</span></div>
+      <div class="card-back">Add your fourth reason here 💕</div>
+    </div>
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-front"><span class="num">5</span><span class="hint">tap to reveal ✨</span></div>
+      <div class="card-back">Add your fifth reason here 💕</div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMORIES -->
+<section>
+  <p class="section-label">us</p>
+  <h2 class="section-title">Our memories 📸</h2>
+  <div class="divider">♡ ♡ ♡</div>
+  <div class="memories-grid">
+    <div class="memory-slot">add photo</div>
+    <div class="memory-slot">add photo</div>
+    <div class="memory-slot">add photo</div>
+    <div class="memory-slot">add photo</div>
+  </div>
+</section>
+
+<!-- LETTER -->
+<section>
+  <p class="section-label">from me to you</p>
+  <h2 class="section-title">A little letter 💌</h2>
+  <div class="letter-box">
+    <p>My Baby Zulu,</p>
+    <p>Write your letter here. Tell her how you feel, what she means to you, your favorite memory together.</p>
+    <p>This is your space. Make it count. 💕</p>
+    <div class="letter-sign">— Your name here</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  made with love, just for you 🎀
+</footer>
+
+<script>
+  // Floating hearts
+  const hero = document.getElementById('hero');
+  const emojis = ['🤍','🩷','💕','✨','🎀','💗'];
+  for (let i = 0; i < 18; i++) {
+    const h = document.createElement('span');
+    h.className = 'heart';
+    h.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    h.style.left = Math.random() * 100 + 'vw';
+    h.style.animationDuration = (8 + Math.random() * 10) + 's';
+    h.style.animationDelay = (Math.random() * 8) + 's';
+    h.style.fontSize = (0.8 + Math.random() * 1.2) + 'rem';
+    hero.appendChild(h);
+  }
+</script>
+</body>
+</html>
